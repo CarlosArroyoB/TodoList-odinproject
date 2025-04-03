@@ -1,1 +1,1 @@
-console.log("conectando todo");
+import '../styles.css'
