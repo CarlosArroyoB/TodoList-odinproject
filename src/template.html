@@ -11,23 +11,25 @@
     </header>
     <button id="addTodo">+</button>
     <dialog id="modal">
-      <h1>New Todo!</h1>
-      <input type="text" id="title" placeholder="Title" />
-      <textarea
-        name="description"
-        id="description"
-        placeholder="Description"
-      ></textarea>
-      <div>
-        <label for="#">Priority</label>
-        <select name="priority" id="priority">
-          <option value="high">High</option>
-          <option value="medium" selected>Medium</option>
-          <option value="low">Low</option>
-        </select>
-      </div>
-      <button id="submit">Submit</button>
-      <button id="close">Close</button>
+      <form id="formulario">
+        <h1>New Todo!</h1>
+        <input type="text" id="title" placeholder="Title" required/>
+        <textarea
+          name="description"
+          id="description"
+          placeholder="Description"
+        ></textarea>
+        <div>
+          <label for="#">Priority</label>
+          <select name="priority" id="priority">
+            <option value="high">High</option>
+            <option value="medium" selected>Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        <button id="submit">Submit</button>
+        <button id="close">Close</button>
+      </form>
     </dialog>
 
     <div id="container"></div>

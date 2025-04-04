@@ -51,5 +51,22 @@ body #addTodo{
     gap: 1em;
 }
 
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2em;
+}
+#container .card{
+    border: 2px solid black;
+    border-radius: 0.2em;
+    padding: 1em;
+    margin-top: 2em;
+    width: 20em; 
+}
+
+
 
 
