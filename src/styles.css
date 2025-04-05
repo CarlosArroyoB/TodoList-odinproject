@@ -66,6 +66,10 @@ body #addTodo{
     margin-top: 2em;
     width: 20em; 
 }
+.card.complete h1,
+.card.complete p {
+  text-decoration: line-through;
+}
 
 
 
