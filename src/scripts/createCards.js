@@ -25,4 +25,27 @@ class todoList {
   }
 }
 
+class projects{
+  constructor(projectName){
+    this.id = crypto.randomUUID();
+    this.projectName = projectName;
+  }
+}
+
+class projectsList{
+  constructor(){
+    this.projects = [];
+  }
+  addProject(projectName){
+    const project = new projects(projectName)
+    this.projects.push(project);
+  }
+  getProject(){
+    return [...this.projects]
+  }
+  deleteProject(id){
+    this.projects = this.projects.filter((project) => project.id !== id)
+  }
+}
+
 export { TodoCard, todoList };

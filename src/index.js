@@ -1,12 +1,12 @@
 import "./styles.css";
 import { todoCard, todoList } from "./scripts/createCards.js";
-import { modalController } from "./scripts/modalController.js"
+import { cardModal } from "./scripts/modalController.js"
 import { todolistView } from "./scripts/todoListView.js";
 
 
 const todolist = new todoList();
 const view = new todolistView(todolist);
-new modalController(todolist,view);
+new cardModal(todolist,view);
 
 
 //create cards

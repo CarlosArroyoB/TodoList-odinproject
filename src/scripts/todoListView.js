@@ -1,6 +1,4 @@
-import { todoCard, todoList } from "./createCards.js";
 
-const todolist = new todoList();
 class todolistView {
   constructor(cardsArray) {
     this.cardsArray = cardsArray;
@@ -34,7 +32,7 @@ class todolistView {
     cardDiv.append(h1, p, status, deleteButton);
     this.setUpCardEventListeners(cardDiv, card.id);
     const prior = card.priority;
-    cardDiv.classList.remove("High", "Medium", "Low"); // Eliminar clases previas de prioridad
+    cardDiv.classList.remove("High", "Medium", "Low"); 
     if (prior === "High") {
       cardDiv.classList.add("High");
     } else if (prior === "Medium") {
@@ -49,17 +47,23 @@ class todolistView {
     const deleteButton = cardDiv.querySelector("button");
     checkbox.addEventListener("click", () => {
       if (checkbox.checked) {
-        cardDiv.classList.add("complete"); // Añadir la clase solo a la carta específica
+        cardDiv.classList.add("complete"); 
       } else {
-        cardDiv.classList.remove("complete"); // Quitar la clase solo de la carta específica
+        cardDiv.classList.remove("complete"); 
       }
     });
 
     deleteButton.addEventListener("click", () => {
-      this.cardsArray.deleteCard(cardId); // Usar el método deleteCard de la instancia de todoList
-      this.renderCard(); // Volver a renderizar las tarjetas
+      this.cardsArray.deleteCard(cardId); 
+      this.renderCard(); 
     });
   }
+}
+
+class projectListView{
+    constructor(projectList){
+        this.projectList = projectList;
+    }
 }
 
 export { todolistView };
