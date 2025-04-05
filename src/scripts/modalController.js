@@ -1,5 +1,4 @@
 import { todoList } from "./createCards.js";
-import { todolistView } from "./todoListView.js";
 const todolist = new todoList();
 
 class modalController {

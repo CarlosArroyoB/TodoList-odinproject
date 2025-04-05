@@ -10,9 +10,11 @@ new modalController(todolist,view);
 
 
 //create cards
-todolist.addCard("TITULO 1", "una pequeña descripcion para el titulo 1","medium")
-todolist.addCard("TITULO 1", "una pequeña descripcion para el titulo 1","medium")
-todolist.addCard("TITULO 1", "una pequeña descripcion para el titulo 1","medium")
+todolist.addCard("TITULO 1", "Descripción 1", "High");
+todolist.addCard("TITULO 2", "Descripción 2", "Medium");
+todolist.addCard("TITULO 3", "Descripción 3", "Low");
+
+console.log(todolist.getCards())
 view.renderCard()
 
 

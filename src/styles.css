@@ -71,6 +71,16 @@ body #addTodo{
   text-decoration: line-through;
 }
 
-
+.card.High {
+    background-color: red; /* Fondo rojo para prioridad alta */
+  }
+  
+  .card.Medium {
+    background-color: yellow; /* Fondo amarillo para prioridad media */
+  }
+  
+  .card.Low {
+    background-color: green; /* Fondo verde para prioridad baja */
+  }
 
 
