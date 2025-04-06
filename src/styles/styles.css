@@ -3,13 +3,16 @@ header{
     justify-content: center;
     align-items: center;
 }
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+html,body{
+    height: 100%;
+    margin: 0;  
+    padding: 0;
 }
 
+body{
+    grid-template-rows: 5% 95%;
+
+}
 body #addTodo{
     width: 5em;
     height: 2em;
@@ -56,7 +59,7 @@ body #addTodo{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    flex-wrap: wrap;
     gap: 2em;
 }
 #container .card{
@@ -64,7 +67,8 @@ body #addTodo{
     border-radius: 0.2em;
     padding: 1em;
     margin-top: 2em;
-    width: 20em; 
+    width: 15em; 
+    
 }
 .card.complete h1,
 .card.complete p {
@@ -72,15 +76,52 @@ body #addTodo{
 }
 
 .card.High {
-    background-color: red; /* Fondo rojo para prioridad alta */
+    background-color: red; 
   }
   
   .card.Medium {
-    background-color: yellow; /* Fondo amarillo para prioridad media */
+    background-color: yellow; 
   }
   
   .card.Low {
-    background-color: green; /* Fondo verde para prioridad baja */
+    background-color: green; 
   }
 
-
+#content{
+    display: grid;
+    grid-template-columns: .55fr 2fr;
+    width: 100%;
+    height: 100%;
+    background-color: bisque;
+    column-gap: 8%;
+}
+#todolist{
+    display: flex;  
+    flex-direction: column;
+    align-items: start;
+}
+.sideBar{
+    background-color: aqua;
+    justify-content: center;
+}
+.sideBar h1{
+    text-align: center;
+}
+#todolist{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 1.1em;
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+}
+#projectList{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 1.1em;
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+}

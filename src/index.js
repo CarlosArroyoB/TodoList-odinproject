@@ -1,7 +1,8 @@
-import "./styles.css";
+import "./styles/reset.css";
+import "./styles/styles.css";
 import { todoCard, todoList } from "./scripts/createCards.js";
-import { cardModal } from "./scripts/modalController.js"
-import { todolistView } from "./scripts/todoListView.js";
+import { cardModal } from "./scripts/Modals.js"
+import { todolistView } from "./scripts/Views.js";
 
 
 const todolist = new todoList();

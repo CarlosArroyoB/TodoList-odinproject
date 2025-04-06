@@ -60,10 +60,11 @@ class todolistView {
   }
 }
 
-class projectListView{
+class projectViews{
     constructor(projectList){
         this.projectList = projectList;
     }
+
 }
 
-export { todolistView };
+export { todolistView,projectViews};

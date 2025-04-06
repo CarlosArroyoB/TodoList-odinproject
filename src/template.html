@@ -9,28 +9,57 @@
     <header>
       <h1>Todo List</h1>
     </header>
-    <button id="addTodo">+</button>
-    <dialog id="modal">
-      <form id="formulario">
-        <h1>New Todo!</h1>
-        <input type="text" id="title" placeholder="Title" required/>
-        <textarea
-          name="description"
-          id="description"
-          placeholder="Description"
-        ></textarea>
-        <div>
-          <label for="#">Priority</label>
-          <select name="priority" id="priority">
-            <option value="High">High</option>
-            <option value="Medium" selected>Medium</option>
-            <option value="Low">Low</option>
-          </select>
+    <div id="content">
+      <div class="sideBar">
+        <h1>Projects</h1>
+        <div id="projects">
+          <button id="addProject"> Add project</button>
+          <div id="projectList">
+            <div class="project" id="project1">
+              <h2>Project 1</h2>
+              <button id="deleteProject">Delete</button>
+            </div>
+            <div class="project" id="project2">
+              <h2>Project 2</h2>
+              <button id="deleteProject">Delete</button>
+            </div>
+            <div class="project" id="project3">
+              <h2>Project 3</h2>
+              <button id="deleteProject">Delete</button>
+            </div>
+          </div>
         </div>
-        <button id="submit">Submit</button>
-        <button id="close">Close</button>
-      </form>
-    </dialog>
-    <div id="container"></div>
+      </div>
+      <div id="todolist">
+        <div>
+          <label for="projectName" id="projectName">ProjectName</label>
+        <button id="addTodo">+</button>
+        </div>
+        <div>
+          <dialog id="modal">
+            <form id="formulario">
+              <h1>New Todo!</h1>
+              <input type="text" id="title" placeholder="Title" required />
+              <textarea
+                name="description"
+                id="description"
+                placeholder="Description"
+              ></textarea>
+              <div>
+                <label for="#">Priority</label>
+                <select name="priority" id="priority">
+                  <option value="High">High</option>
+                  <option value="Medium" selected>Medium</option>
+                  <option value="Low">Low</option>
+                </select>
+              </div>
+              <button id="submit">Submit</button>
+              <button id="close">Close</button>
+            </form>
+          </dialog>
+          <div id="container"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

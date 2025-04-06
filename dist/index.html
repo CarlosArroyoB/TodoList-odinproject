@@ -4,33 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
+  <script defer src="main.js"></script></head>
   <body>
     <header>
       <h1>Todo List</h1>
     </header>
-    <button id="addTodo">+</button>
-    <dialog id="modal">
-      <form id="formulario">
-        <h1>New Todo!</h1>
-        <input type="text" id="title" placeholder="Title" required/>
-        <textarea
-          name="description"
-          id="description"
-          placeholder="Description"
-        ></textarea>
+    <div id="content">
+      <div class="sideBar">
+        <h1>adad</h1>
+      </div>
+      <div id="todolist">
+        <button id="addTodo">+</button>
         <div>
-          <label for="#">Priority</label>
-          <select name="priority" id="priority">
-            <option value="high">High</option>
-            <option value="medium" selected>Medium</option>
-            <option value="low">Low</option>
-          </select>
+          <dialog id="modal">
+            <form id="formulario">
+              <h1>New Todo!</h1>
+              <input type="text" id="title" placeholder="Title" required />
+              <textarea
+                name="description"
+                id="description"
+                placeholder="Description"
+              ></textarea>
+              <div>
+                <label for="#">Priority</label>
+                <select name="priority" id="priority">
+                  <option value="High">High</option>
+                  <option value="Medium" selected>Medium</option>
+                  <option value="Low">Low</option>
+                </select>
+              </div>
+              <button id="submit">Submit</button>
+              <button id="close">Close</button>
+            </form>
+          </dialog>
+          <div id="container"></div>
         </div>
-        <button id="submit">Submit</button>
-        <button id="close">Close</button>
-      </form>
-    </dialog>
-    <div id="container"></div>
+        
+      </div>
+    </div>
   </body>
 </html>
