@@ -1,5 +1,5 @@
-import { todoList } from "./createCards.js";
-const todolist = new todoList();
+import { projects } from "./createCards.js";
+const todolist = new projects();
 
 class cardModal {
   constructor(todoList, view) {

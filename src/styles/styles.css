@@ -100,11 +100,11 @@ body #addTodo{
     flex-direction: column;
     align-items: start;
 }
-.sideBar{
+#sideBar{
     background-color: aqua;
     justify-content: center;
 }
-.sideBar h1{
+#sideBar h1{
     text-align: center;
 }
 #todolist{
@@ -124,4 +124,14 @@ body #addTodo{
     width: 100%;
     height: 100%;
     background-color: brown;
+}
+.project-card{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    padding: 1.1em;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(221, 221, 221);
 }
