@@ -24,10 +24,10 @@ console.log("Tareas del proyecto Home:", homeProject.getTodoList());
 
 ////////////////////////////////////
 const view = new todolistView(projectManager);
-new cardModal(todolist,view);
+new cardModal(projectManager,view);
 
 view.renderProject()
-const homeProjectId = projectManager.getProjects()[1].id; // ID del proyecto "Home"
+const homeProjectId = projectManager.getProjects()[0].id; 
 view.renderCard(homeProjectId); 
 
 

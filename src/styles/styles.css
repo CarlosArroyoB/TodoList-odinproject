@@ -54,6 +54,40 @@ body #addTodo{
     gap: 1em;
 }
 
+#addProjectModal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    width: 30%;
+    max-width: 500px; 
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+#addProjectModal.show{
+    display: block; /* Mostrar el modal cuando se active */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5em;
+    padding: 1em;
+    padding-bottom: 1em;
+    margin: 0;
+}
+#addProjectModal.show h1{
+    text-align: center;
+}
+#addProjectModal.show div{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+
 #container {
     display: flex;
     flex-direction: row;
