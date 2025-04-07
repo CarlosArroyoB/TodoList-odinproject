@@ -10,35 +10,30 @@
       <h1>Todo List</h1>
     </header>
     <div id="content">
-      <div class="sideBar">
-        <h1>Projects</h1>
+      <div id="sideBar">
+        <div id="sidebar-header">
+          <h1>My projects</h1>
+        <button id="addProject"> Add project</button>
+        </div>
         <div id="projects">
-          <button id="addProject"> Add project</button>
+          <dialog id="addProjectModal">
+            <input type="text" name="projectName" id="projectName" placeholder="Project Name" required />
+            <button id="submitProject">Submit</button>
+            <button id="cancel">Cancel</button>
+          </dialog>
           <div id="projectList">
-            <div class="project" id="project1">
-              <h2>Project 1</h2>
-              <button id="deleteProject">Delete</button>
-            </div>
-            <div class="project" id="project2">
-              <h2>Project 2</h2>
-              <button id="deleteProject">Delete</button>
-            </div>
-            <div class="project" id="project3">
-              <h2>Project 3</h2>
-              <button id="deleteProject">Delete</button>
-            </div>
           </div>
         </div>
       </div>
       <div id="todolist">
-        <div>
-          <label for="projectName" id="projectName">ProjectName</label>
-        <button id="addTodo">+</button>
+        <div id="headerTodo">
+          <label for="projectTitle" id="projectTitle"></label>
+          <button id="addTodo">Add Todo's</button>
         </div>
-        <div>
+        <div id="contentTodo">
           <dialog id="modal">
+            <h1>New Todo!</h1>
             <form id="formulario">
-              <h1>New Todo!</h1>
               <input type="text" id="title" placeholder="Title" required />
               <textarea
                 name="description"
