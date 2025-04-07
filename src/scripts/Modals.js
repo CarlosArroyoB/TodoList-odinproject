@@ -1,47 +1,52 @@
-
 class cardModal {
   constructor(projectManager, view) {
-    this.projectManager = projectManager; // Instancia de projectsList
+    this.projectManager = projectManager; // Instancia de projectList
     this.view = view; // Vista para renderizar
+
+    // Elementos del DOM
     this.addTodo = document.getElementById("addTodo");
     this.modal = document.getElementById("modal");
     this.closeModal = document.getElementById("close");
     this.submitModal = document.getElementById("formulario");
     this.addProject = document.getElementById("addProject");
     this.addProjectModal = document.getElementById("addProjectModal");
-    this.projectSelect = document.getElementById("project-card"); 
+    this.projectSelect = document.getElementById("project-card");
     this.submitProject = document.getElementById("submitProject");
-    this.cancel = document.getElementById("cancel"); 
+    this.cancel = document.getElementById("cancel");
+
     this.setUpListeners();
   }
 
   setUpListeners() {
-    // Abrir el modal para añadir tareas
+    // Abrir modal para tareas
     this.addTodo.addEventListener("click", () =>
       this.modal.classList.add("show")
     );
 
-    // Cerrar el modal
+    // Cerrar modal de tareas
     this.closeModal.addEventListener("click", () =>
       this.modal.classList.remove("show")
     );
 
-    // Manejar el envío del formulario para añadir tareas
+    // Envío del formulario de tareas
     this.submitModal.addEventListener("submit", (event) =>
       this.handleSubmit(event)
     );
 
-    // Abrir el modal para añadir proyectos
+    // Abrir modal de proyectos
     this.addProject.addEventListener("click", () =>
       this.addProjectModal.classList.add("show")
     );
+
+    // Enviar nuevo proyecto
     this.submitProject.addEventListener("click", () => {
       const projectName = document.getElementById("projectName").value;
       this.projectManager.addProject(projectName);
-      this.view.renderProject(); // Renderizar la lista de proyectos actualizada
-      this.addProjectModal.classList.remove("show"); // Cerrar el modal
+      this.view.renderProject();
+      this.addProjectModal.classList.remove("show");
     });
-    
+
+    // Cancelar creación de proyecto
     this.cancel.addEventListener("click", () =>
       this.addProjectModal.classList.remove("show")
     );
@@ -53,18 +58,19 @@ class cardModal {
     const title = document.getElementById("title").value;
     const description = document.getElementById("description").value;
     const priority = document.getElementById("priority").value;
-    const selectedProjectId = this.view.getCurrentProjectId(); 
-  
-    const project = this.projectManager.getProjectById(selectedProjectId);
+    const selectedProjectId = this.view.getCurrentProjectId();
 
-    if (project) {
-      project.addTodoList(title, description, priority);
+    if (selectedProjectId) {
+      this.projectManager.addTodoToProject(
+        selectedProjectId,
+        title,
+        description,
+        priority
+      );
 
-  
       this.view.renderCard(selectedProjectId);
       this.view.renderProject();
 
-      // Cerrar el modal y resetear el formulario
       this.submitModal.reset();
       this.modal.classList.remove("show");
     } else {

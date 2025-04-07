@@ -1,35 +1,38 @@
 import "./styles/reset.css";
 import "./styles/styles.css";
 import { projectList } from "./scripts/createCards.js";
-import { cardModal } from "./scripts/Modals.js"
+import { cardModal } from "./scripts/Modals.js";
 import { todolistView } from "./scripts/Views.js";
 
 /////////////////
 const projectManager = new projectList();
 
-projectManager.addProject("Home");
-projectManager.addProject("Today");
+// Función para recrear los proyectos predeterminados
+function createDefaultProjects() {
+  projectManager.addProject("Home");
+
+  const homeProject = projectManager
+    .getProjects()
+    .find((project) => project.projectName === "Home");
+  if (homeProject) {
+    homeProject.addTodoList("Todo 1", "Task description 1", "High");
+    homeProject.addTodoList("Todo 2", "Task description 2", "Medium");
+    homeProject.addTodoList("Todo 3", "Task description 3", "Low");
+  }
+
+  projectManager.saveToLocalStorage(); // Guardar los proyectos predeterminados en localStorage
+}
+
+// Verificar si los proyectos predeterminados existen
+if (projectManager.getProjects().length === 0) {
+  createDefaultProjects();
+}
 console.log("Todos los proyectos:", projectManager.getProjects());
-
-const homeProject = projectManager.getProjects()[0];
-const homeProject2 = projectManager.getProjects()[1];
-homeProject.addTodoList("casita 1", "Descripción 1", "High");
-homeProject.addTodoList("casita 2", "Descripción 2", "Low");
-
-homeProject2.addTodoList("hoome 3", "Descripción 3", "Medium");
-homeProject2.addTodoList("TITULO 4", "Descripción 4", "High");
-console.log("Todos los proyectos:", projectManager.getProjects());
-console.log("Tareas del proyecto Home:", homeProject.getTodoList());
-
 
 ////////////////////////////////////
 const view = new todolistView(projectManager);
-new cardModal(projectManager,view);
+new cardModal(projectManager, view);
 
-view.renderProject()
-const homeProjectId = projectManager.getProjects()[0].id; 
-view.renderCard(homeProjectId); 
-
-
-
-
+view.renderProject();
+const homeProjectId = projectManager.getProjects()[0].id;
+view.renderCard(homeProjectId);
