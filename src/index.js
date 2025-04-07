@@ -7,8 +7,8 @@ import { todolistView } from "./scripts/Views.js";
 /////////////////
 const projectManager = new projectList();
 
-projectManager.addProject("CASITA");
-projectManager.addProject("home");
+projectManager.addProject("Home");
+projectManager.addProject("Today");
 console.log("Todos los proyectos:", projectManager.getProjects());
 
 const homeProject = projectManager.getProjects()[0];

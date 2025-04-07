@@ -3,6 +3,7 @@ class todolistView {
     this.projectManager = projectManager;
     this.container = document.getElementById("container");
     this.sideBar = document.getElementById("projectList");
+    this.projectName = document.getElementById("projectTitle");
     this.currentProjectId = projectManager.getProjects()[0].id; // Inicializar con el primer proyecto
   }
 
@@ -13,6 +14,7 @@ class todolistView {
       console.log("Proyecto:", project);
       const projectCard = this.createProjectCard(project);
       this.sideBar.appendChild(projectCard);
+      
     });
   }
 
@@ -21,12 +23,16 @@ class todolistView {
     this.container.innerHTML = "";
 
     const project = this.projectManager.getProjectById(projectId);
-
+    const title = this.titleProject(project);
+    
+    this.projectName.innerHTML = ""; 
+    this.projectName.appendChild(title)
     if (project) {
       project.getTodoList().forEach((todo) => {
         console.log("Tarea:", todo);
 
         const todoCard = this.createCard(todo, projectId);
+        
         this.container.appendChild(todoCard);
       });
     } else {
@@ -48,10 +54,31 @@ class todolistView {
     const h1 = document.createElement("button");
     h1.textContent = project.projectName;
 
+
     projectDiv.append(h1);
     this.setUpProjectEventListeners(projectDiv, project.id);
 
     return projectDiv;
+  }
+
+  changueProjectName(projectId) {
+    const project = this.projectManager.getProjectById(projectId);
+    if (project) {
+      const newName = prompt("Ingrese el nuevo nombre del proyecto:", project.projectName);
+      if (newName) {
+        project.projectName = newName;
+        this.renderProject(); // Actualizar la lista de proyectos
+      }
+    } else {
+      console.error("No se encontró el proyecto con el ID:", projectId);
+    }
+  }
+
+  titleProject(project) {
+    const h1 = document.createElement("h1");
+    h1.textContent = project.projectName;
+    return h1;
+
   }
 
   // Crear una tarjeta para una tarea

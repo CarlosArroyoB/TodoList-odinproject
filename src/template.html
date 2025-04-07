@@ -11,9 +11,11 @@
     </header>
     <div id="content">
       <div id="sideBar">
-        <h1>Projects</h1>
+        <div id="sidebar-header">
+          <h1>My projects</h1>
+        <button id="addProject"> Add project</button>
+        </div>
         <div id="projects">
-          <button id="addProject"> Add project</button>
           <dialog id="addProjectModal">
             <input type="text" name="projectName" id="projectName" placeholder="Project Name" required />
             <button id="submitProject">Submit</button>
@@ -24,11 +26,11 @@
         </div>
       </div>
       <div id="todolist">
-        <div>
-          <label for="projectName" id="projectName">HOME</label>
-        <button id="addTodo">+</button>
+        <div id="headerTodo">
+          <label for="projectTitle" id="projectTitle"></label>
+          <button id="addTodo">Add Todo's</button>
         </div>
-        <div>
+        <div id="contentTodo">
           <dialog id="modal">
             <form id="formulario">
               <h1>New Todo!</h1>

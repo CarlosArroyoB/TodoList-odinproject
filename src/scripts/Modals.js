@@ -10,7 +10,8 @@ class cardModal {
     this.addProject = document.getElementById("addProject");
     this.addProjectModal = document.getElementById("addProjectModal");
     this.projectSelect = document.getElementById("project-card"); 
-    this.cancel = document.getElementById("cancel"); // Botón de cancelar en el modal de añadir proyecto
+    this.submitProject = document.getElementById("submitProject");
+    this.cancel = document.getElementById("cancel"); 
     this.setUpListeners();
   }
 
@@ -34,6 +35,13 @@ class cardModal {
     this.addProject.addEventListener("click", () =>
       this.addProjectModal.classList.add("show")
     );
+    this.submitProject.addEventListener("click", () => {
+      const projectName = document.getElementById("projectName").value;
+      this.projectManager.addProject(projectName);
+      this.view.renderProject(); // Renderizar la lista de proyectos actualizada
+      this.addProjectModal.classList.remove("show"); // Cerrar el modal
+    });
+    
     this.cancel.addEventListener("click", () =>
       this.addProjectModal.classList.remove("show")
     );
