@@ -19,6 +19,12 @@ class todolistView {
     this.projectManager.getProjects().forEach((project) => {
       const projectCard = this.createProjectCard(project);
   
+      // Marcar el proyecto "Home" como seleccionado por defecto
+      if (project.projectName === "Home" && !this.currentProjectId) {
+        projectCard.classList.add("selected");
+        this.currentProjectId = project.id; // Establecer el ID del proyecto actual
+      }
+  
       this.sideBar.appendChild(projectCard);
     });
   }
