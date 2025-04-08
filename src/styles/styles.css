@@ -122,7 +122,9 @@ body .project-card button:hover {
 body #addTodo:hover {
     background-color: #5a4fcf;
 }
-
+#title:valid{
+    border: 2px solid #27df30;
+}
 /* Estilos para el modal */
 #modal {
   display: none; 
